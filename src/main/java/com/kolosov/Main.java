@@ -4,6 +4,10 @@ import com.kolosov.stringBuilder.StringBuilder;
 
 import java.util.Arrays;
 
+
+/**
+ * Для упрощения нет учёта кодировок. Поэтому работает только с латиницей.
+ */
 public class Main {
     public static void main(String[] args) {
         StringBuilder builder = new StringBuilder("0");
