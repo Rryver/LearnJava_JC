@@ -1,15 +1,15 @@
 package com.kolosov.countOfElements;
 
-import com.kolosov.filtering.Filter;
-
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
+/**
+ * Напишите метод, который получает на вход массив элементов и возвращает Map ключи в котором - элементы, а значения - сколько раз встретился этот элемент
+ */
 public class Main {
     public static void main(String[] args) {
         Integer[] r = new Integer[] {1, 2,2, 3, 4,4,4};
