@@ -1,10 +1,8 @@
 package com.kolosov.numberGenerator;
 
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 /**
@@ -36,19 +34,14 @@ public class Main {
                         Collectors.summingDouble(Order::getCost))
                 );
 
-        System.out.println(collect);
-
         Map<String, Double> result = collect.entrySet().stream()
-//        List<Map.Entry<String, Double>> result = collect.entrySet().stream()
                 .sorted((o1, o2) -> Double.compare(o2.getValue(), o1.getValue()))
                 .limit(3)
-//                .toList();
-//                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         Map.Entry::getValue,
                         (s, a) -> a,
-                        TreeMap::new
+                        LinkedHashMap::new
                 ));
 
         System.out.println(result);

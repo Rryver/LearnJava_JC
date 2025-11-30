@@ -25,8 +25,7 @@ public class Main {
 
         Map<String, Double> result = students
                 .parallelStream()
-                .map(Student::getGrades)
-                .flatMap(grades -> grades.entrySet().stream())
+                .flatMap(student -> student.getGrades().entrySet().stream())
                 .collect(Collectors.groupingBy(
                         Map.Entry::getKey,
                         Collectors.averagingDouble(Map.Entry::getValue)
