@@ -9,11 +9,11 @@ public class BankAccount {
         this.balance = new AtomicInteger(balance);
     }
 
-    public void deposit(int amount) {
+    public synchronized void deposit(int amount) {
         balance.addAndGet(amount);
     }
 
-    public void withdraw(int amount) {
+    public synchronized void withdraw(int amount) {
         if (getBalance() < amount) {
             throw new RuntimeException("На счете нет достаточной суммы для совершения операции");
         }
