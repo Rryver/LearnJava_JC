@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: LearnJava_JC
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5439/TestBlank
+    username: postgres
+    password: root
+
+    dbcp2:
+      default-schema: public
+  liquibase:
+    enabled: false
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    open-in-view: false
